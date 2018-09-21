@@ -22,6 +22,7 @@ services:
                 depends_on: 
                         - mysql
                         - redis
+      
         mysql:  -
                 image: mysql:5.7
                 environment: 
@@ -30,8 +31,10 @@ services:
                         MYSQL_PASSWORD: ${DB_PASSWORD}
                 volumes: 
                         - ./mysql:/var/lib/mysql
+        
+
         redis: 
                 image: redis:3.0
-
+       
                 volumes: 
                         - ./redis:/data
