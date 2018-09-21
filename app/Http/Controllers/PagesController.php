@@ -54,8 +54,6 @@ class PagesController extends Controller
             "host" => $host,
             "header" => $header
         ]);
-    //    return view ('pages.info') -> with('ipJSON', $ipJSON) -> with('browserJSON', $browserJSON) -> with('user', $user) -> with('hostJSON', $hostJSON); -> with('headerJSON', $headerJSON);
-    
     }
 
 }

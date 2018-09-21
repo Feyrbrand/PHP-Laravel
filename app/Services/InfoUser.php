@@ -72,11 +72,13 @@ class InfoUser
 	//
 	public static function get_host()
 	{
-	//	$host = request() -> getHttpHost();
 		$host = request() -> url();
 		return $host;  
 	}
 	
+	// get header data 
+	// read array of header information and split it up in readable data
+	//
 	public static function get_header()
 	{
 		$header_array = request() -> header();
@@ -86,33 +88,17 @@ class InfoUser
 		{ 
 			foreach ($item as $innerkey => $inneritem)
 			{
-				$string = explode(',', $inneritem);
-				//print_r($string); 
-				//	{
-					/*
-					list($innerkey, $value) = explode('=', $inneritem);
-						$value = trim($value, '"');
-						echo ($match[1].' -> '.$value."\n");
-				
-					}	*/
-		
+				$string = explode(',', $inneritem);		
 			}	
 		}
-		/*$headerJSON = json_encode($header_array);
-		print_r($headerJSON);
-		die(); */
+
 		return $header_array;
-		//array_keys()
-		//array_values  
+ 
 	}
-	/*foreach ($header_array as $key => $item)  {
-		foreach ($header_array as $innerkey => $inneritem)  {
-			list($innerkey, $value) = explode('=', $inneritem);
-				$value = trim($value, '"');
-				echo ($match[1].' -> '.$value."\n");
-	*/
+	// md5 - get a string and hash it with md5
+	//
 	public static function get_md5($str)
 	{
-		return md5($str); 
+		return bmd5($str); 
 	}			
 }
