@@ -99,6 +99,6 @@ class InfoUser
 	//
 	public static function get_md5($str)
 	{
-		return bmd5($str); 
+		return md5($str); 
 	}			
 }
